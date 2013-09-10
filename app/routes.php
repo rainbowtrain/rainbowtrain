@@ -15,3 +15,48 @@ Route::get('/', function()
 {
 	return View::make('index');
 });
+
+Route::get('/letters', function()
+{
+	return View::make('letters');
+});
+
+Route::get('/numbers', function()
+{
+	return View::make('numbers');
+});
+
+Route::get('/colors', function()
+{
+	return View::make('colors');
+});
+
+Route::get('/shapes', function()
+{
+	return View::make('shapes');
+});
+
+Route::get('/songs', function()
+{
+	return View::make('songs');
+});
+
+Route::get('/stories', function()
+{
+	return View::make('stories');
+});
+
+Route::get('/games', function()
+{
+	return View::make('games');
+});
+
+Route::get('/phonics', function()
+{
+	return View::make('index');
+});
+
+Route::get('/', function()
+{
+	return View::make('index');
+});
