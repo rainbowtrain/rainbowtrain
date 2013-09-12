@@ -60,3 +60,8 @@ Route::get('/', function()
 {
 	return View::make('index');
 });
+
+Route::get('/letters/{letter}', function($letter)
+{
+	return View::make('letters/letter', array('letter' => $letter));
+})->where('letter', '[A-Za-z]+');
