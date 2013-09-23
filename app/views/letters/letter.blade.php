@@ -9,7 +9,11 @@
     	</style>
   	</head>
   	<body>
-    	<canvas id="letter_canvas"></canvas>
+    	<audio autoplay>
+			<source src="/assets/mp3/airplane1.ogg" type="audio/ogg">
+  			<source src="/assets/mp3/airplane1.mp3" type="audio/mpeg">
+		</audio>
+		<canvas id="letter_canvas"></canvas>
     	<script>
 	  		
 			// set canvas to full screen
@@ -64,5 +68,6 @@
         		animate(img, canvas, context, startTime);
       		}, 1000);
     	</script>
+		 
   	</body>
 </html>
