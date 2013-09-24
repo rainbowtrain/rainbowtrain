@@ -43,7 +43,7 @@
 			}
 		
 
-			var bd = {big_dropped: false, yval: 0, alt: 329, played: false};	
+			var bd = {big_dropped: false, yval: 110, alt: 329, played: false};	
 
 			function animate(img, canvas, context, startTime) {
 				// update
@@ -58,9 +58,9 @@
 					// here's a fucking hack... and a 1/2 since img object doesn't have x and y, they do have alt and name... bwahahaha
 					if (newX>229) {
 						bd.alt = 329;
-						bd.yval += 5;
-						if (bd.yval > 600) {
-							bd.yval = 600;
+						bd.yval += 2;
+						if (bd.yval > 650) {
+							bd.yval = 650;
 							adio_a = document.getElementById('lettera');
 							if (bd.played == false) {
 								adio_a.play(); // only play once when it lands
@@ -105,11 +105,11 @@
       		
 			drawImgX(img, context);
 
-      		// wait one second before starting animation
+      		// wait a second before starting animation
       		setTimeout(function() {
         		var startTime = (new Date()).getTime();
         		animate(img, canvas, context, startTime);
-      		}, 0);
+      		}, 600);
 
 			// play sound
 			var adio = document.getElementById('airplane');
