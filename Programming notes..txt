@@ -1,0 +1,32 @@
+(Twitter boot strap) is a CSS and javascript library. Frame work for designing websites. Short cuts and templates for code writing. 
+
+(Jquery) is a javascrip library. The most widely use javascript library in the industry. Creates quick references to HTML, div's, classes, ect.
+and much more.......
+
+(C.R.U.D) Create, Read, Update, and Delete. Read is the busiest or the list. 
+
+(Git) is a versioning system. 
+
+(Git hub) is Git's graphical interface and command center.
+
+(Laravel) is a PHP framework. 
+
+(PHP) is a backend programming language. PHP can be saved to disc, and onto a database. this is possible cause php is run on the server and not the users comp.
+
+(Javascript) is also a programming lang..However, is a Frontend lang. Connot be saved to disc. Javascript is run and stored on the users comp. Cannot be saved to a database.
+
+This is where the reference to (Client side and Server side) derives form.
+
+Client side cannot write files or data to dise or a data base.
+
+Server side can. 
+
+Apache is a web server that serves web pages. Recives request and routes them. 
+
+MySQL is a data base server. It stores and allows you to query data inside databases 
+
+Read up on laravel at laravel.com and look into it templating engine called blade.
+
+
+
+

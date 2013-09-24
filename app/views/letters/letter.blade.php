@@ -37,8 +37,9 @@
 
 				var linearSpeed = 100;
 				// pixels / second
+				
 				var newX = linearSpeed * time / 1000;
-				if(newX < canvas.width - img.width / 2) {
+				if(newX < canvas.width - (img.width - 250) / 2) {
 					img.alt = newX;
 					// here's a fucking hack... and a 1/2 since img object doesn't have x and y, they do have alt and name... bwahahaha
 				}
@@ -66,7 +67,7 @@
       		setTimeout(function() {
         		var startTime = (new Date()).getTime();
         		animate(img, canvas, context, startTime);
-      		}, 1000);
+      		}, 100);
     	</script>
 		 
   	</body>
