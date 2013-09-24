@@ -49,6 +49,7 @@
 
 				var linearSpeed = 100;
 				// pixels / second
+				
 				var newX = linearSpeed * time / 1000;
 				var newY = linearSpeed * time / 3000;
 				if(newX < canvas.width - (img.width - 250) / 2) {

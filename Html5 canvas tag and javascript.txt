@@ -1,0 +1,21 @@
+<DOCTYPE html>
+<html>
+<head>
+<script type="application/javascript" language="javascript">
+Window.onload=draw;//Execute draw function when DOM is ready
+function draw(){
+    //Assign our canvas element to variable
+   var canvas=document.getElementByid("rainbowtrain1")
+   //Create the HTML5 context object to enable draw methods
+   var ctx=canvas.getContext("2d");
+   //fillstyle (r,g,b,alpha);
+   Ctx.fillstyle="rgba(0,200,0,1)";
+   //fillRect (x,y,width,height);
+   ctx.fillRec(34,10,22,22);             
+}              
+</script>
+</head>
+<body>
+<canvas id="Rainbowtrain1"width=""height=""></canvas>
+</body>
+</html>
