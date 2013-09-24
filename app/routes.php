@@ -77,32 +77,32 @@ Route::get('/shapes/{shape}', function($shape)
 {
 
 	return View::make('shapes/shape', array('shape' => $shape));
-})->where('shape', '[]+');
+})->where('shape', '[0-9A-Za-z]+');
 
 Route::get('/colors/{color}', function($color)   
 {
 
 	return View::make('colors/color', array('number' => $number));
-})->where('shape', '[]+');
+})->where('shape', '[0-9A-Za-z]+');
 
  Route::get('/phonics/{phonics}', function($phonics)   
 {
 
 	return View::make('phonics/phonics', array('phonics' => $phonics));
-})->where('phonics', '[]+');
+})->where('phonics', '[0-9A-Za-z]+');
 
 Route::get('/games./{game}', function($game)  
 {
 return View::make('games/game', array('game' => $game));
-})->where('game', '[]+');
+});
 
 Route::get('/songs/{song}', function($song)  
-
+{
 return View::make('songs/song', array('song' => $song));
-})->where('song', '[]+');
+});
 
 Route::get('/stories/{story}', function($story)  
-
+{
 return View::make('stories/story', array('story' => $story));
-})->where('story', '[]+');
+});
 

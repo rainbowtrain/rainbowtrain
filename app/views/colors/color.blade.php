@@ -1,1 +1,1 @@
-you've landed on number: {{$number}}
+you've landed on color: {{$color}}
