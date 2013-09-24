@@ -14,16 +14,16 @@
 	</div>
 	<div class="col-lg-4">
 	  	<h2>Numbers</h2>
-		<p><a href="/Numbers"><img src="/assets/img/" /></a></p>
+		<p><a href="/numbers"><img src="/assets/img/" /></a></p>
    	</div>
 	<div class="col-lg-4">
 	  	<h2>Colors</h2>
-		<p><a href="/Colors"><img src="/assets/img/colors.jpg" /></a></p>
+		<p><a href="/colors"><img src="/assets/img/colors.jpg" /></a></p>
 	</div>
 	</div>
 	<div class="col-lg-4">
 	    <h2>Shapes</h2>
-		<p><a href="/Shapes"><img src="/assets/img/shapes.jpg" /></a></p>
+		<p><a href="/shapes"><img src="/assets/img/shapes.jpg" /></a></p>
 	</div>	
 		
 	<div class="col-lg-4">
