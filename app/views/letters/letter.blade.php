@@ -9,7 +9,11 @@
     	</style>
   	</head>
   	<body>
-    	<audio id="airplane">
+    	<audio id="lettera">
+			<source src="/assets/mp3/letter_a.ogg" type="audio/ogg">
+			<source src="/assets/mp3/letter_a.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="airplane">
 			<source src="/assets/mp3/airplane1.ogg" type="audio/ogg">
   			<source src="/assets/mp3/airplane1.mp3" type="audio/mpeg">
 		</audio>
@@ -18,8 +22,9 @@
 	  		
 			// set canvas to full screen
 			c = document.getElementById('letter_canvas');
-			c.width = document.body.clientWidth;
-    		c.height = document.body.clientHeight;
+			c.width = 1500;
+    		c.height = 800;
+			c.style = "background-color: pink;";
       		
 			window.requestAnimFrame = (function(callback) {
         		return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
@@ -28,21 +33,18 @@
         		};
       		})();
 
-			function big_dropped() {
-				var big_dropped = false;
-				var alt = 0;
-			}
-
 		  	function drawImgX(img, context) {
 				context.drawImage(img, img.alt, img.y);
 			}
 			
-			function drawImgY(img, context) {
-				context.drawImage(img, img.alt, img.name); // using alt for x, name for y... bwhahaha
+			function drawImgY(biga, context) {
+				context.drawImage(biga, biga.alt, biga.name); // using alt for x, name for y... bwhahaha
+				//alert(biga.alt + " " + biga.name);
 			}
 		
-			bd = new big_dropped();
-	
+
+			var bd = {big_dropped: false, yval: 0, alt: 329, played: false};	
+
 			function animate(img, canvas, context, startTime) {
 				// update
 				var time = (new Date()).getTime() - startTime;
@@ -50,20 +52,28 @@
 				var linearSpeed = 100;
 				// pixels / second
 				
-				var newX = linearSpeed * time / 1000;
-				var newY = linearSpeed * time / 3000;
+				var newX = linearSpeed * time / 500;
 				if(newX < canvas.width - (img.width - 250) / 2) {
 					img.alt = newX;
 					// here's a fucking hack... and a 1/2 since img object doesn't have x and y, they do have alt and name... bwahahaha
 					if (newX>229) {
 						bd.alt = 329;
+						bd.yval += 5;
+						if (bd.yval > 600) {
+							bd.yval = 600;
+							adio_a = document.getElementById('lettera');
+							if (bd.played == false) {
+								adio_a.play(); // only play once when it lands
+								bd.played = true;
+							}
+						}
+						//alert('abcd: '+bd.yval);
 						bd.big_dropped=true;
 						// why 229? because it's like... an inch into the animation and i don't know why else
 						// load the letter bomb
-						if (newY > canvas.height - biga.height / 2) {
-							biga.alt = bd.alt;
-							biga.name = newY;
-						}
+						biga.alt = bd.alt;
+						biga.name = bd.yval; // start with defaults
+						//alert("fda: " + biga.name);
 					}
 				}
 
@@ -90,6 +100,8 @@
 
 			var biga = new Image();
 			biga.src = '/assets/img/biga.png';
+			biga.width = 150;
+			biga.height = 150;
       		
 			drawImgX(img, context);
 
