@@ -72,3 +72,37 @@ Route::get('/numbers/{number}', function($number)
 
 	return View::make('numbers/number', array('number' => $number));
 })->where('letter', '[0-9]+');
+
+Route::get('/shapes/{shape}', function($shape)   
+{
+
+	return View::make('shapes/shape', array('shape' => $shape));
+})->where('shape', '[]+');
+
+Route::get('/colors/{color}', function($color)   
+{
+
+	return View::make('colors/color', array('number' => $number));
+})->where('shape', '[]+');
+
+ Route::get('/phonics/{phonics}', function($phonics)   
+{
+
+	return View::make('phonics/phonics', array('phonics' => $phonics));
+})->where('phonics', '[]+');
+
+Route::get('/games./{game}', function($game)  
+{
+return View::make('games/game', array('game' => $game));
+})->where('game', '[]+');
+
+Route::get('/songs/{song}', function($song)  
+
+return View::make('songs/song', array('song' => $song));
+})->where('song', '[]+');
+
+Route::get('/stories/{story}', function($story)  
+
+return View::make('stories/story', array('story' => $story));
+})->where('story', '[]+');
+
