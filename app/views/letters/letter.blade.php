@@ -2,10 +2,9 @@
 <html>
 	<head>
     	<style>
-      		body {
-        		margin: 0px;
-        		padding: 0px;
-      		}
+			* { margin:0; padding:0; } /* to remove the top and left whitespace */
+			html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+			canvas { display:block; } /* To remove the scrollbars */
     	</style>
   	</head>
   	<body>
@@ -20,12 +19,8 @@
 		<canvas id="letter_canvas"></canvas>
     	<script>
 	  		
-			// set canvas to full screen
-			c = document.getElementById('letter_canvas');
-			c.width = 1500;
-    		c.height = 800;
-			c.style = "background-color: pink;";
-      		
+			     		
+
 			window.requestAnimFrame = (function(callback) {
         		return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
         		function(callback) {
@@ -95,8 +90,14 @@
 			var canvas = document.getElementById('letter_canvas');
 			var context = canvas.getContext('2d');
 
+			canvas.style = "background-color: pink;";
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+
+			window.addEventListener('resize', resizeCanvas, false);
+
 			var img = new Image();
-			img.src = '/assets/img/airplane.png';
+			img.src = '/assets/img/airplane2.png';
 
 			var biga = new Image();
 			biga.src = '/assets/img/biga.png';
@@ -114,6 +115,11 @@
 			// play sound
 			var adio = document.getElementById('airplane');
 			adio.play();
+
+			function resizeCanvas() {
+            	canvas.width = window.innerWidth;
+            	canvas.height = window.innerHeight;	
+			}
 
     	</script>
 		 
