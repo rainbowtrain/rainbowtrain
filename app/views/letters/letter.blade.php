@@ -17,6 +17,10 @@
   			<source src="/assets/mp3/airplane1.mp3" type="audio/mpeg">
 		</audio>
 		<canvas id="letter_canvas"></canvas>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/kineticjs/4.3.1/kinetic.min.js" type="script/javascript"></script>
+
+
     	<script>
 	  		
 			     		
@@ -38,7 +42,6 @@
 			}
 		
 
-			var bd = {big_dropped: false, yval: 110, alt: 329, played: false};	
 
 			function animate(img, canvas, context, startTime) {
 				// update
@@ -95,6 +98,8 @@
 			canvas.height = window.innerHeight;
 
 			window.addEventListener('resize', resizeCanvas, false);
+
+			var bd = {big_dropped: false, yval: 110, alt: 329, played: false};	
 
 			var img = new Image();
 			img.src = '/assets/img/airplane2.png';
