@@ -18,10 +18,10 @@
 	  canvas.style = "background-color: blue";
 	  var context = canvas.getContext('2d');
 
-	  var img = new Image();
-	  img.onload = function (){
-	      this._mycanvas.drawImage(img,129 ,240 );
-	  };	  
+	 // var img = new Image();
+	  //img.onload = function (){
+	  //    this._mycanvas.drawImage(img,129 ,240 );
+	  //};	  
       img.src = '/assets/img/cat.png';
         
 	  //context.drawImage(img,129 ,240 );
@@ -37,11 +37,11 @@
       drawImage(img, context);
       /*
       wait one second before dropping image
-      setTimeout(function()*\ {
+      setTimeout(function(){
         var startTime = (new Date()).getTime();
         animate(img, canvas, context, startTime);
       }, 2000);
-	  
+	  */
 	  window.requestAnimFrame = (function(callback) {
         return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
         function(callback) {
@@ -66,7 +66,7 @@
         //if(myRectangle.y > canvas.height - myRectangle.height - myRectangle.borderWidth / 2) {
           //myRectangle.y = canvas.height - myRectangle.height - myRectangle.borderWidth / 2;
         
-        last\
+        last
 		Time = time;
 
         // clear
