@@ -18,20 +18,28 @@
 	  canvas.style = "background-color: blue";
 	  var context = canvas.getContext('2d');
 
-      var myRectangle = {
-        x: window.innerWidth/2 -50,
-        y: 0,
+	  var img = new Image();
+	  img.onload = function (){
+	      this._mycanvas.drawImage(img,129 ,240 );
+	  };	  
+      img.src = '/assets/img/cat.png';
+        
+	  //context.drawImage(img,129 ,240 );
+		
+		/*
+		alt: window.innerWidth/2 -50,
+        name: 0,
         width: 100,
         height: 50,
-        borderWidth: 5
-      };
+        borderWidth: 
+      };*/
 
-      drawRectangle(myRectangle, context);
-
-      // wait one second before dropping rectangle
-      setTimeout(function() {
+      drawImage(img, context);
+      /*
+      wait one second before dropping image
+      setTimeout(function()*\ {
         var startTime = (new Date()).getTime();
-        animate(myRectangle, canvas, context, startTime);
+        animate(img, canvas, context, startTime);
       }, 2000);
 	  
 	  window.requestAnimFrame = (function(callback) {
@@ -42,38 +50,34 @@
       })();
 
 
-	  function drawRectangle(myRectangle, context) {
-        context.beginPath();
-        context.rect(myRectangle.x, myRectangle.y, myRectangle.width, myRectangle.height);
-        context.fillStyle = '#8ED6FF';
-        context.fill();
-        context.lineWidth = myRectangle.borderWidth;
-        context.strokeStyle = 'black';
-        context.stroke();
+	  function drawImage(img, context) {
+       
       }
-      function animate(myRectangle, canvas, context, startTime) {
+      
+	  function animate(img, canvas, context, startTime) {
         // update
         var time = (new Date()).getTime() - startTime;
 
         // pixels / second^2
         var gravity = 200;
 
-        myRectangle.y = 0.5 * gravity * Math.pow(time / 1000, 2);
+        //img.y = 0.5 * gravity * Math.pow(time / 1000, 2);
 
-        if(myRectangle.y > canvas.height - myRectangle.height - myRectangle.borderWidth / 2) {
-          myRectangle.y = canvas.height - myRectangle.height - myRectangle.borderWidth / 2;
-        }
-        lastTime = time;
+        //if(myRectangle.y > canvas.height - myRectangle.height - myRectangle.borderWidth / 2) {
+          //myRectangle.y = canvas.height - myRectangle.height - myRectangle.borderWidth / 2;
+        
+        last\
+		Time = time;
 
         // clear
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         // draw
-        drawRectangle(myRectangle, context);
+        drawImage(img, context);
 
         // request new frame
         requestAnimFrame(function() {
-          animate(myRectangle, canvas, context, startTime);
+          animate(img, canvas, context, startTime);
         });
       }
 	  
