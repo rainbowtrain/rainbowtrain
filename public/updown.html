@@ -1,86 +1,60 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
+	<head>
     <style>
       body {
         margin: 0px;
         padding: 0px;
       }
     </style>
-  </head>
-  <body>
-    <canvas id="myCanvas"></canvas>
-    <script>
+	</head>
+	<body>
+		<canvas id="myCanvas"></canvas>
+		<script>
       
-	  var canvas = document.getElementById('myCanvas');
-	  canvas.width = window.innerWidth;
-	  canvas.height = window.innerHeight - 25;
-	  canvas.style = "background-color: blue";
-	  var context = canvas.getContext('2d');
+			var canvas = document.getElementById('myCanvas');
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight - 25;
+			canvas.style = "background-color: blue";
+			var context = canvas.getContext('2d');
 
-	  var img = new Image();
-	  img.onload = function (){
-	     this.canvas.drawImage(img,129 ,240 );
-	  };	  
-      img.src = '/assets/img/cat.png';
-        
-	 
+			var img = new Image();
+			img.src = '/assets/img/cat.png';
+			img.alt = window.innerWidth/2;
+			img.name = 0;
+			context.drawImage(img, 0, 0);
+
       
+		window.requestAnimFrame = (function(){
+			return  window.requestAnimationFrame	||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame    ||
+				function( callback ){
+					window.setTimeout(callback, 1000 / 60);
+				};
+		})();
+
 		
-		/*
-		alt: window.innerWidth/2 -50,
-        name: 0,
-        width: 100,
-        height: 50,
-        borderWidth: 
-      };*/
-
-      drawImage(img, context);
-      /*
-      wait one second before dropping image
-      setTimeout(function(){
-        var startTime = (new Date()).getTime();
-        animate(img, canvas, context, startTime);
-      }, 2000);
-	  */
-	  window.requestAnimFrame = (function(callback) {
-        return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-        function(callback) {
-          window.setTimeout(callback, 1000 / 60);
-        };
-      })();
-
-
-	  function drawImage(img, context) {
-       
-      }
       
-	  function animate(img, canvas, context, startTime) {
-        // update
-        var time = (new Date()).getTime() - startTime;
+		function animate(img, context) {
+			
+			img.name = (parseInt(img.name) + 2);
 
-        // pixels / second^2
-        var gravity = 200;
+	   
+			// clear the canvas
+			context.clearRect(0, 0, canvas.width, canvas.height);
 
-        //img.alt = 0.5 * gravity * Math.pow(time / 1000, 2);
+			// draw
+			context.drawImage(img, img.alt, img.name);
 
-        //if(myRectangle.y > canvas.height - myRectangle.height - myRectangle.borderWidth / 2) {
-          //myRectangle.y = canvas.height - myRectangle.height - myRectangle.borderWidth / 2;
-        
-        last
-		Time = time;
+			// request new frame
+			requestAnimFrame(function() {
+			  animate(img, context);
+			});
+		}
 
-        // clear
-        context.clearRect(0, 0, canvas.width, canvas.height);
-
-        // draw
-        drawImage(img, context);
-
-        // request new frame
-        requestAnimFrame(function() {
-          animate(img, canvas, context, startTime);
-        });
-      }
+		animate(img, context);
+	
 	  
     </script>
   </body>
